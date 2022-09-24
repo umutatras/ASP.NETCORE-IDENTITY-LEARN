@@ -1,0 +1,19 @@
+﻿@model UserSignInModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Custom Cookie Based</title>
+</head>
+<body>
+    <form method="post" asp-action="SignIn" asp-controller="Home" >
+        <input asp-for="@Model.UserName" />
+        <input asp-for="@Model.Password" />
+        <input type="checkbox" asp-for="@Model.Remember" /><label>Beni Hatırla</label>
+        <div>
+            <button type="submit">
+                Giriş
+            </button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿@model UserAdminCreateModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Create" asp-controller="User" method="post" class="p-3 mx-auto shadow">
+    <div class="mb-3">
+        <span class="text-danger" asp-validation-for="@Model.Username"></span>
+        <label>Kullanıcı Adı</label>
+        <input asp-for="Username" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <span class="text-danger" asp-validation-for="@Model.Email"></span>
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <span class="text-danger" asp-validation-for="@Model.Gender"></span>
+        <label>Cinsiyet</label>
+        <input asp-for="Gender" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary">Kaydet</button>
+    </div>
+    <div class="text-danger" asp-validation-summary="ModelOnly">
+
+    </div>
+</form>

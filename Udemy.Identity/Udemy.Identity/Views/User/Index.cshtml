@@ -1,0 +1,35 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<a class="btn btn-primary" asp-action="Create" asp-controller="User">Yeni kullanıcı ekle</a><br />
+<table>
+    <thead>
+        <tr>
+            <th>UserName</th>
+            <th>Gender</th>
+            <th>email</th>
+            <th>Role Info</th>
+            <th></th>
+        </tr>
+     
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.Gender</td>
+                <td>@item.Email</td>
+                <td><getUserInfo user-id="@item.Id"></getUserInfo></td>
+                <td><a asp-action="AsgginRole" asp-route-id="@item.Id"></a></td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+

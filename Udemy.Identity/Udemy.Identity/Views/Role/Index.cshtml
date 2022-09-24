@@ -1,0 +1,32 @@
+﻿@model List<AppRole>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<a class="btn btn-primary" asp-action="Create" asp-controller="Role">Yeni kullanıcı ekle</a>
+<br />
+<table>
+    <thead>
+        <tr>
+            <th>AD</th>
+            <th>Tarih</th>
+           
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.CreatedTime</td>
+             
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+
